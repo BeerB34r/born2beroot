@@ -19,6 +19,7 @@
    - AmogusImp0st0r (root)
    - When_the_amongus_impostor_vents_for_the_2nd_time (mde-beer)
    - The_g0blin_h0ards_many_treasures (encryption passphrase)
+   - jan_Alitote_li_tawa_sike_e_sik3 (ssh-key)
   - invalid
    - mde-beer'sFunnypassw0rd
    - ionlywriteinlowercase
@@ -35,9 +36,9 @@
  - restrict sudo paths, ex:
   - /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 - minimum users:
- x root
- x mde-beer
-  x has to belong to sudo and user42 groups
+ - root
+ - mde-beer
+  - has to belong to sudo and user42 groups
 - make monitoring.sh (in bash)
  - run at startup and every 10 minutes
  - banner is optional
