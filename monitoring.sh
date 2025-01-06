@@ -15,11 +15,11 @@ MEMFREE=$(echo $MEMINFO | cut -f 2 -d ' ' | head -n 1 | tr -d 'kB')
 MEMUSED=$(( ( $MEMTOTAL ) - ( $MEMFREE / 1024 ) ))
 MEM_USE=$(echo $MEMUSED/$MEMTOTAL mB \($(( ( $MEMUSED * 100 ) / $MEMTOTAL ))%\) )
 # get, split and format disk information
-DISKINFO=$(df -a --total -BG | tail -n 1 | tr -d ' total-')
-DISKTOTAL=$(echo $DISKINFO | cut -f 1 -d 'G')
-DISKUSE=$(echo $DISKINFO | cut -f 2 -d 'G')
-DISKPERC=$(echo $DISKINFO | cut -f 4 -d 'G')
-DISK_USE=$(echo $DISKUSE/$DISKTOTAL gB \($DISKPERC\))
+DISKINFO=$(df -a --total -BM | tail -n 1 | tr -d ' total-')
+DISKTOTAL=$(echo $DISKINFO | cut -f 1 -d 'M')
+DISKUSE=$(echo $DISKINFO | cut -f 2 -d 'M')
+DISKPERC=$(echo $DISKINFO | cut -f 4 -d 'M')
+DISK_USE=$(echo $DISKUSE/$DISKTOTAL mB \($DISKPERC\))
 # get last boot time
 BOOT=$(echo "$(uptime -p) ($(uptime -s))")
 # count amount of tcp entries whose state is 'established'
@@ -34,7 +34,7 @@ IP=$(hostname -I)
 MAC=$(cat /sys/class/net/enp*/address)
 # when the journal is controlled
 SUDO=$(sudo journalctl _COMM=sudo | wc -l)
-wall "
+wall -n "
 #Architecture 			$ARCH
 #CPU 				P-$PHYS V-$VIRT LOAD-$LOAD
 #Memory 			$MEM_USE
