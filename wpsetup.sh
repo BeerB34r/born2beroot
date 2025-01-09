@@ -1,5 +1,8 @@
 #/bin/sh
 
+sudo systemctl restart mariadb
+sleep 10
+
 sudo mysql_secure_installation <<EOF
 
 n
