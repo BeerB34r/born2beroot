@@ -25,7 +25,8 @@ echo "databases initialised"
 sudo systemctl restart mariadb
 sudo systemctl restart php-fpm
 sudo systemctl restart lighttpd
-sed -i'' -Ee 's/@reboot.*//' /var/spool/cron/root
-rm -f /bin/wpsetup.sh
-
+#sed -i'' -Ee 's/@reboot.*//' /var/spool/cron/root
+#rm -f /bin/wpsetup.sh
+rm -f /etc/init.d/wpsetup.sh
+rm -f /etc/rc.d/wpsetup.sh
 echo "cleanup done!"
