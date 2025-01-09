@@ -1,15 +1,19 @@
-# stuff that isnt set up automatically
+# Born2beauto cheat sheet
 
-sudo setsebool -P httpd_setrlimit on
-mysql_secure_installation <<EOF
+## status
+Fully automatic
 
-n
-y
-y
-y
-y
-EOF
+## information
 
-sudo chown lighttpd:lighttpd /var/run/php-fpm/wp-config.php
+password=Born2beauto
 
-mv /var/www/html /var/www/lighttpd
+## complications
+if any prompt were to appear, at any time, during the post-install script, the
+installation will hang forever
+heredocs are the devil, and i couldnt get it to work properly with the install
+script
+sql isnt automatically set up, trying now by prepending 'sudo systemctl restart
+mariadb'
+## statistics
+
+uptime start-to-finish = 9~ min
