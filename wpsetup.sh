@@ -48,5 +48,20 @@ define('DB_USER', 'wpuser');
 define('DB_PASSWORD', 'Born2beauto');
 define('DB_HOST', 'localhost');
 require_once ABSPATH . 'wp-settings.php';" > /var/www/lighttpd/wp-config.php
+
+sudo dnf config-manager -y --set-enabled crb
+sudo dnf install -y \
+    https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm \
+    https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm
+sudo dnf install -y --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm -y
+sudo dnf config-manager -y --set-enabled rpmfusion-free-updates-testing
+sudo dnf install -y jellyfin
+sudo systemctl enable --now jellyfin
+sudo firewall-cmd --permanent --add-service=jellyfin
+sudo firewall-cmd --reload
+mkdir /home/mde-beer/videos
+chmod -R 766 /home/mde-beer
+wget -O /home/mde-beer/videos/ 'https://archive.org/compress/johnnybravo1997/formats=MPEG4&file=/johnnybravo1997.zip'
+unzip /home/mde-beer/videos/*.zip
 rm -f /bin/wpsetup.sh
 echo "cleanup done!"
