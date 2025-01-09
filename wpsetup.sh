@@ -27,6 +27,6 @@ sudo systemctl restart php-fpm
 sudo systemctl restart lighttpd
 #sed -i'' -Ee 's/@reboot.*//' /var/spool/cron/root
 #rm -f /bin/wpsetup.sh
-rm -f /etc/init.d/wpsetup.sh
 rm -f /etc/rc.d/wpsetup.sh
+sed -i'' -Ee 's/.*wpsetup.*//' /etc/rc.d/rc.local
 echo "cleanup done!"
