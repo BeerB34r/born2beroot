@@ -18,3 +18,4 @@ FLUSH PRIVILEGES;
 EOF
 
 sed -i'' -Ee 's/@reboot.*//' /var/spool/cron/root
+rm -f /bin/wpsetup.sh
