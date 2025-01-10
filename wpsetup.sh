@@ -63,6 +63,7 @@ chown jellyfin:jellyfin /videos
 wget -O /videos/johnnybravo1997.zip 'https://archive.org/compress/johnnybravo1997/formats=MPEG4&file=/johnnybravo1997.zip'
 unzip /videos/johnnybravo1997.zip -d /videos
 chmod -R 666 /videos
+chown -R jellyfin:jellyfin /videos
 systemctl restart jellyfin
 rm -f /bin/wpsetup.sh
 echo "cleanup done!"
