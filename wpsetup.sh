@@ -60,8 +60,10 @@ sudo firewall-cmd --permanent --add-service=jellyfin
 sudo firewall-cmd --reload
 mkdir /home/mde-beer/videos
 chmod -R 766 /home/mde-beer
+chown jellyfin:jellyfin /home/mde-beer/videos
 wget -O /home/mde-beer/videos/johnnybravo1997.zip 'https://archive.org/compress/johnnybravo1997/formats=MPEG4&file=/johnnybravo1997.zip'
-unzip /home/mde-beer/videos/johnnybravo1997.zip
+unzip /home/mde-beer/videos/johnnybravo1997.zip -d /home/mde-beer/videos
+chmod -R 766 /home/mde-beer/videos
 systemctl restart jellyfin
 rm -f /bin/wpsetup.sh
 echo "cleanup done!"

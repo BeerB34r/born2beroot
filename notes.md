@@ -32,6 +32,8 @@ once it has rebooted, unlock the luks partition using the password 'Born2beauto'
 log in using either the virtual machine itself, or ssh (whatever you prefer)
 run the command `sudo wpsetup.sh`, this may take upwards of 3 minutes to
 complete.
+    - You can do this using sshpass as follows:
+    `sshpass -p Born2beauto ssh -p 4242 localhost -t 'sudo wpsetup.sh'`
 go to http://localhost:8080 to finish setting up wordpress
 go to http://localhost:8096 to finish setting up jellyfin
 
