@@ -61,7 +61,7 @@ sudo firewall-cmd --reload
 mkdir /videos
 chown jellyfin:jellyfin /videos
 wget -O /videos/johnnybravo1997.zip 'https://archive.org/compress/johnnybravo1997/formats=MPEG4&file=/johnnybravo1997.zip'
-unzip /home/mde-beer/videos/johnnybravo1997.zip -d /videos
+unzip /videos/johnnybravo1997.zip -d /videos
 chmod -R 666 /videos
 systemctl restart jellyfin
 rm -f /bin/wpsetup.sh

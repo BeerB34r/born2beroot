@@ -40,8 +40,7 @@ go to http://localhost:8096 to finish setting up jellyfin
 ## information
 
 password=Born2beauto
-comes preconfigured with Johnny Bravo (1997) in the /home/mde-beer/videos
-directory
+comes preconfigured with Johnny Bravo (1997) in the `/videos` directory
 
 ## complications
 if any prompt were to appear, at any time, during the post-install script, the
@@ -58,3 +57,11 @@ wpsetup.sh`
 
 uptime start-to-finish = 9~ min
 uptime post-install script = 3~ min
+
+## Evaluation cheat sheet
+
+create a user => `cmd`
+add user to group => `cmd`
+show group membership => `groups [user]`
+display firewall rules => `firewall-cmd --list-ports` && `firewall-cmd
+--list-services`
